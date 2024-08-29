@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Register</title>
+   </head>
+<body>
+  
+  <div class="wrapper">
+    <h2>Register</h2><br>
+    {% if messages %}
+      {% for message in messages %}
+        <p style="color: #b22222;">{{message}}</p>
+      {% endfor %}
+    {% endif %}
+    <form action="#" method="POST">
+      {% csrf_token %}
+      <div class="input-box">
+        <input type="text" placeholder="Create a username" required name="username">
+      </div>
+      <div class="input-box">
+        <input type="email" placeholder="Enter your email" required name="email">
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Enter your password" required name="password">
+      </div>
+      <div class="policy">
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Register">
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="{%url 'login'%}">Login now</a></h3>
+      </div>
+      <div class="text">
+        <h3>Forgot Password? <a href="#">Reset</a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://img.freepik.com/free-vector/gradient-background-green-color-design-moderns-abstract_343694-2171.jpg?t=st=1724828628~exp=1724829228~hmac=0e14de6c9f50146c281ad0c655c097301990659c265f2ca60410cb091e301dde" );
+  background-repeat: no-repeat ;
+  background-size: cover;
+}
+
+.wrapper{
+  position:relative;
+    width:360px;
+    height:480px;
+    margin:30px;
+    box-shadow:20px 20px 50px rgba(0,0,0,0.5);
+    border-radius:15px;
+    background:rgba(255,255,255,0.1);
+    overflow:hidden;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter:blur(5px);
+    z-index:1;
+}
+.wrapper h2{
+  position: relative;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333;
+}
+.wrapper h2::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 90px;
+  border-radius: 12px;
+  background: #40f45b;
+}
+
+.wrapper p{
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+.wrapper p::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 12px;
+  background: #40f45b;
+}
+.wrapper form{
+  margin-top: 30px;
+}
+.wrapper form .input-box{
+  height: 52px;
+  margin: 18px 0;
+}
+form .input-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #C7BEBE;
+  border-bottom-width: 2.5px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.input-box input:focus,
+.input-box input:valid{
+  border-color: #40f45b;
+}
+
+.input-box:hover{
+  transform: scale(1.1);
+}
+
+form .policy{
+  display: flex;
+  align-items: center;
+}
+form h3{
+  color: #707070;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.input-box.button input{
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  background: #40f45b;
+  cursor: pointer;
+}
+.input-box.button input:hover{
+  background: #1fbb37;
+}
+form .text h3{
+ color: #333;
+ width: 100%;
+ text-align: center;
+}
+form .text h3 a{
+  color: #40f45b;
+  text-decoration: none;
+}
+form .text h3 a:hover{
+  text-decoration: underline;
+}
+
+</style>
+</html>
